@@ -1,4 +1,4 @@
-const summarize = require("./book");
+const {summarize} = require("./book");
 
 const add = (library, book) => {
     return {...library, books: library.books.concat(book)};
