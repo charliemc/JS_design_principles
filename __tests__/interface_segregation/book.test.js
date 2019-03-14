@@ -1,4 +1,4 @@
-const {rating, rate, summarize} = require("../../src/interface_segregation/book");
+const {rate, summarize} = require("../../src/interface_segregation/book");
 
 test('rate a book', () => {
     const book = {title: "", author: "", published: 1990, totalRating: 0, ratingCount: 0};

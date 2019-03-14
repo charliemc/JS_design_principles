@@ -1,4 +1,3 @@
-const {rating, rate} = require("../../src/interface_segregation/book");
 const booksWithRating = require("../../src/interface_segregation/book_stats");
 
 test('get books with specific rating', () => {
