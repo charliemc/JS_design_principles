@@ -1,15 +1,10 @@
-const {ResponseKind, write} = require("../../src/dependency_inversion/response_writer");
+const {write} = require("../../src/dependency_inversion/response_writer");
 
 describe('response writer outputs', () => {
-    it('should output XML when selected', () => {
-        expect(write({name:""}, ResponseKind.XML)).toMatch("<customer>");
-    })
+    const customer = { name: "xyz" };
+    const serializer = customer => customer.name;
 
-    it('should output HTML when selected', () => {
-        expect(write({name:""}, ResponseKind.HTML)).toMatch("<html>");
-    })
-
-    it('should output as string when selected', () => {
-        expect(write({name:""}, ResponseKind.STRING)).toMatch("Customer:");
+    it('should serialize input', () => {
+        expect(write(customer, serializer)).toEqual(customer.name);
     })
 })
